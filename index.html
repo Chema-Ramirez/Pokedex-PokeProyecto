@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokédex Neoland!</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://cdn.icon-icons.com/icons2/851/PNG/512/pikachu_icon-icons.com_67535.png" />
+</head>
+
+<body>
+
+
+
+  <header>
+    
+    <a href="./components/login/login.html" class="cerrar-sesion">Cerrar Poke-Sesión</a>
+
+    <nav class="nav">
+      <img src="img/Pok-dex-Neoland-17-11-2024.png" class="pokedex-neoland"  alt="Logo Pokédex">
+
+      <ul class="nav-list">
+        <li class="nav-item"><button class="btn btn-header ver-todo" id="ver-todos">Ver todos</button></li>
+        <li class="nav-item"><button class="btn btn-header normal" id="normal">Normal</button></li>
+        <li class="nav-item"><button class="btn btn-header water" id="water">Agua</button></li>
+        <li class="nav-item"><button class="btn btn-header fire" id="fire">Fuego</button></li>
+        <li class="nav-item"><button class="btn btn-header ice" id="ice">Hielo</button></li>
+        <li class="nav-item"><button class="btn btn-header grass" id="grass">Planta</button></li>
+        <li class="nav-item"><button class="btn btn-header electric" id="electric">Eléctrico</button></li>
+        <li class="nav-item"><button class="btn btn-header rock" id="rock">Piedra</button></li>
+        <li class="nav-item"><button class="btn btn-header steel" id="steel">Acero</button></li>
+        <li class="nav-item"><button class="btn btn-header bug" id="bug">Bicho</button></li>
+        <li class="nav-item"><button class="btn btn-header poison" id="poison">Veneno</button></li>
+        <li class="nav-item"><button class="btn btn-header flying" id="flying">Volador</button></li>
+        <li class="nav-item"><button class="btn btn-header ghost" id="ghost">Fantasma</button></li>
+        <li class="nav-item"><button class="btn btn-header psychic" id="psychic">Psíquico</button></li>
+        <li class="nav-item"><button class="btn btn-header ground" id="ground">Tierra</button></li>
+        <li class="nav-item"><button class="btn btn-header dragon" id="dragon">Dragón</button></li>
+        <li class="nav-item"><button class="btn btn-header fighting" id="fighting">Lucha</button></li>
+        <li class="nav-item"><button class="btn btn-header fairy" id="fairy">Hada</button></li>
+      </ul>
+
+
+      <div id="buscador">
+        <h1 id="buscador-cabecera">Buscador de Pokémon</h1>
+          <input type="text" id="pokemon-name" autocomplete="off" placeholder="Nombre o ID del Pokémon" />
+          <button id="buscar-btn">Buscar</button>
+      </div>
+<div id="pokemon-info"></div>
+      
+    </nav>
+  </header>
+
+  <main>
+    <div id="todos">
+      <div class="pokemon-todos" id="listaPokemon"></div>
+    </div>
+  </main>
+
+  <script type="module" src="apiPokemon.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
