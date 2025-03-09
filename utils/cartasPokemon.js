@@ -17,8 +17,8 @@ export const createPokemonCard = (poke, pokeId) => {
                 ${tipos}
             </div>
             <div class="pokemon-stats">
-                <p class="stat">Altura:${poke.height}m</p>
-                <p class="stat">Peso:${poke.weight}kg</p>
+                <p class="stat">Altura: ${(poke.height / 10).toFixed(2)} m</p> <!-- Formateamos a metros -->
+                <p class="stat">Peso: ${(poke.weight / 10).toFixed(2)} kg</p> <!-- Formateamos a kg -->
             </div>
         </div>
     `;
@@ -28,7 +28,14 @@ export const createPokemonCard = (poke, pokeId) => {
 export const displayPokemonList = (pokemonList, containerId) => {
     const container = document.getElementById(containerId);
     container.innerHTML = '';
-    pokemonList.forEach(pokemon => {
-        container.appendChild(pokemon);
-    });
+
+    if (pokemonList.length === 0) {
+        const noResultsMessage = document.createElement("p");
+        noResultsMessage.textContent = "No se encontraron Pokémon que coincidan con la búsqueda.";
+        container.appendChild(noResultsMessage);
+    } else {
+        pokemonList.forEach(pokemon => {
+            container.appendChild(pokemon);
+        });
+    }
 };

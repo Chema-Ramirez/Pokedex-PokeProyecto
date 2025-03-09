@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("loggedIn") === "true") {
+        window.location.href = "index.html";
+    }
     initializeLoginForm();
 });
 
@@ -17,7 +20,7 @@ function initializeLoginForm() {
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
 
-        validateLogin(username, password, validUser) ?
+        validateLogin(username, password, validUser) ? 
             handleLoginSuccess(username) :
             displayError(errorMessage, "Usuario o contraseña incorrectos.");
     });
@@ -40,7 +43,12 @@ function validateLogin(username, password, validUser) {
 function displayError(errorElement, message) {
     errorElement.textContent = message;
     errorElement.style.display = "block";
+    
+    setTimeout(() => {
+        errorElement.style.display = "none";
+    }, 3000);
 }
+
 /**
  * @param {string} username
  */
@@ -48,10 +56,8 @@ function handleLoginSuccess(username) {
     localStorage.setItem("loggedIn", "true");
     localStorage.setItem("username", username);
 
-    window.location.href = "index.html"
-
+    window.location.href = "index.html";
 }
-
 
 const $submit = document.getElementById("submit"),
     $password = document.getElementById("password"),
@@ -60,7 +66,6 @@ const $submit = document.getElementById("submit"),
 
 document.addEventListener("change", (e) => {
     if (e.target === $visible) {
-        if ($visible.checked === false) $password.type = "password";
-        else $password.type = "text";
+        $password.type = $visible.checked ? "text" : "password";
     }
-})
+});

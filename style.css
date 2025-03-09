@@ -125,6 +125,30 @@ main {
   background-position: 10% 100%;
 }
 
+.pokemon:hover {
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+  transform: translateY(-10px);
+  background-color: #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.pokemon:hover {
+  border-color: #224aa9;
+}
+
+.pokemon:hover::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.15;
+}
+
 .pokemon-id-back {
   position: absolute;
   top: 1rem;
@@ -201,37 +225,44 @@ main {
   border-radius: 100vmax;
 }
 
-/*Cerrar sesión*/
 .cerrar-sesion {
-  color: whitesmoke;
-  width: 100px;
-  background-color: #224aa9;
-  padding: 1rem;
-  border-radius: 8rem;
+  color: #fff;
+  width: 150px;
+  background-color: #e63946;
+  padding: 0.2rem;
+  border-radius: 50px;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 800;
-  box-shadow: 0 0 1rem black;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
   margin: 0.2rem;
-  border: 3px solid black;
-
+  border: 3px solid #e63946;
+  transition: all 0.3s ease;
   position: fixed;
   top: 15px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cerrar-sesion:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 2rem black;
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
-/*Imagen Pokédex Neoland*/
+.cerrar-sesion:focus {
+  outline: none;
+  box-shadow: 0 0 10px #224aa9;
+}
+
 .pokedex-neoland {
   max-width: 80%;
   margin: auto;
 }
 
-/*CSS de los botones de la cabecera*/
 ul {
   list-style-type: none;
 }
@@ -331,7 +362,6 @@ ul {
   color: var(--clr-black);
 }
 
-/*Buscador*/
 #buscador {
   display: flex;
   gap: 50px;
@@ -341,24 +371,6 @@ ul {
 #pokemon-name {
   padding: 5px;
   width: 250px;
-}
-
-#buscar-btn {
-  padding: 12px 24px;
-  font-size: 16px;
-  background-color: #4caf50;
-  color: white;
-  border: 2px solid black;
-  border-radius: 8px;
-  cursor: pointer;
-  margin-left: 1px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-#buscar-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 2rem black;
 }
 
 #pokemon-info {
