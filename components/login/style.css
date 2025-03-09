@@ -1,150 +1,153 @@
-@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-    font-family: "Sour Gummy", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  font-family: "Sour Gummy", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    height: 100%;
-    font-family: "Roboto", sans-serif;
-    background: linear-gradient(175deg, #0a0a0a, #474646);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s ease;
-    background-image: url(https://i.blogs.es/3a5e33/pokemon/1366_2000.webp);
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(175deg, #0a0a0a, #474646);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(https://wallpapers.com/images/featured/fondods-pokemon-hd-fazqcs1tmwwte1ap.jpg);
 }
 
 body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-h1{
-color: #ffd00b;
+h1 {
+  color: #ffd00b;
 }
 
-p{
-    margin-top: 4px;
-    color: #ff6600;
+p {
+  margin-top: 4px;
+  color: #ff6600;
 }
 
-p a{
-    color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 20px;
-    text-decoration: none;
+p a {
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  text-decoration: none;
 }
 
-
-button{
-margin-top: 20px;
+button {
+  margin-top: 20px;
 }
 
 form {
-    width: 400px;
-    height: 655px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.4);
-    border-radius: 15px;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background: linear-gradient(175deg, #0a0a0a, #474646);
+  width: 400px;
+  height: 655px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(175deg, #181717, #242222);
 }
 
 form:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px 20px black;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px 20px black;
 }
 
 form img {
-    width: 200px;
-    height: 200px;
-    padding: 5px;
-    margin-bottom: 5px;
-    transition: transform 0.3s ease;
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease;
 }
 
 form img:hover {
-    transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
-form input[type="text"], input[type="password"] {
-    width: 80%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #ffd00b;
-    border-radius: 15px;
-    background-color: #212121;
-    color: #ffffff;
-    font-size: 16px;
-    transition: all 0.3s ease;
+form input[type="text"],
+input[type="password"] {
+  width: 80%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ffd00b;
+  border-radius: 15px;
+  background-color: #212121;
+  color: #ffffff;
+  font-size: 16px;
+  transition: all 0.3s ease;
 }
 
-form input[type="text"]:focus, form input[type="password"]:focus {
-    border-color: #ff6600;
-    background-color: #333333;
-    outline: none;
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+  border-color: #ff6600;
+  background-color: #333333;
+  outline: none;
 }
 
 form label {
-    font-weight: 500;
-    color: #ffffff;
-    margin-bottom: 5px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 5px;
 }
 
 form button {
-    border: none;
-    outline: 0;
-    background-color: #ffd00b;
-    border-radius: 25px;
-    cursor: pointer;
-    width: 60%;
-    padding: 10px;
-    color: white;
-    font-weight: 500;
-    font-size: 18px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  outline: 0;
+  background-color: #ffd00b;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 60%;
+  padding: 10px;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 form button:hover {
-    background-color: #ffd00b;
-    transform: translateY(-5px);
+  background-color: #ffd00b;
+  transform: translateY(-5px);
 }
 
 form button:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
-.visible{
-color: #ffd00b;
+.visible {
+  color: #ffd00b;
 }
 
 .box-visible {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .box-visible:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
-

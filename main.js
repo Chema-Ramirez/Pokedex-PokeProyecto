@@ -5,7 +5,7 @@ import { createPokemonCard, displayPokemonList } from './utils/cartasPokemon.js'
 
 import { buscarPokemon } from './utils/buscador.js';
 
-// Función  y llamada inicial para cargar los Pokémon
+
 const loadPokemons = async () => {
     const pokemonList = [];
     for (let i = 1; i <= 151; i++) {  // Por ejemplo, cargar los primeros 151 Pokémon
@@ -20,7 +20,6 @@ loadPokemons();
 
 
 
-// Listeners para los filtros de tipo de Pokémon
 document.getElementById('ver-todos').addEventListener('click', () => loadPokemons());
 
 const addFilterListener = (buttonId, type) => {
@@ -37,7 +36,7 @@ const addFilterListener = (buttonId, type) => {
     });
 };
 
-// Filtros para cada tipo de Pokémon
+
 addFilterListener('normal', 'normal');
 addFilterListener('water', 'water');
 addFilterListener('fire', 'fire');
@@ -59,7 +58,6 @@ addFilterListener('fairy', 'fairy');
 
 
 
-//Buscador con botón
 document.getElementById('buscar-btn').addEventListener('click', () => {
     const nombrePokemon = document.getElementById('pokemon-name').value.toLowerCase();
     const pokemonInfo = document.getElementById('pokemon-info');

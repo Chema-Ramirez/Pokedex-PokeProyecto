@@ -1,9 +1,7 @@
-// Función para crear el HTML de un Pokémon
 export const createPokemonCard = (poke, pokeId) => {
     const div = document.createElement("div");
     div.classList.add("pokemon");
 
-    // Crear el contenido HTML
     const tipos = poke.types.map(type => `<p class="${type.type.name} tipo">${type.type.name.toUpperCase()}</p>`).join('');
 
     div.innerHTML = `
@@ -27,10 +25,9 @@ export const createPokemonCard = (poke, pokeId) => {
     return div;
 };
 
-// Función para actualizar la lista de Pokémon en el DOM
 export const displayPokemonList = (pokemonList, containerId) => {
     const container = document.getElementById(containerId);
-    container.innerHTML = ''; // Limpiar la lista antes de añadir los nuevos Pokémon
+    container.innerHTML = '';
     pokemonList.forEach(pokemon => {
         container.appendChild(pokemon);
     });
