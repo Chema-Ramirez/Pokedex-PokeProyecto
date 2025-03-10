@@ -396,3 +396,96 @@ ul {
 #pokemon-name {
   border-radius: 5rem;
 }
+
+@media (max-width: 600px) {
+  form {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+  }
+
+  form img {
+    width: 150px;
+    height: 150px;
+  }
+
+  form input[type="text"],
+  input[type="password"] {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  form button {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  form {
+    width: 80%;
+    height: auto;
+  }
+
+  form img {
+    width: 180px;
+    height: 180px;
+  }
+
+  form input[type="text"],
+  input[type="password"] {
+    width: 85%;
+  }
+
+  form button {
+    width: 70%;
+    font-size: 17px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  form {
+    width: 400px;
+    height: 655px;
+  }
+
+  form img {
+    width: 200px;
+    height: 200px;
+  }
+
+  form input[type="text"],
+  input[type="password"] {
+    width: 80%;
+    font-size: 16px;
+  }
+
+  form button {
+    width: 60%;
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
