@@ -1,64 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE-edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokédex Neoland!</title>
+  <title>Login Poke-Página Neoland</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon"
-    href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png" />
+  <link rel="icon" href="https://images.icon-icons.com/382/PNG/128/PokeBall_37565.png" />
 </head>
 
 <body>
+  <div class="login-container">
+    <div class="login-box">
+      <form id="loginForm" aria-labelledby="loginFormLabel">
+        <h1 id="loginFormLabel">Iniciar Poke-Sesión</h1>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/512px-Pok%C3%A9_Ball_icon.svg.png"
+          alt="Logo Poke-Sesión">
 
+        <label for="username">Bienvenid@ Poke-Entrenador!</label>
+        <input type="text" id="username" placeholder="Nombre" autocomplete="off" required
+          aria-label="Nombre de usuario">
 
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" placeholder="Contraseña" required aria-label="Contraseña">
 
-  <header>
+        <div class="box-visible">
+          <input type="checkbox" id="visible" class="check">
+          <label for="visible">Mostrar Contraseña</label>
+        </div>
 
-    <a href="components/login/login.html" class="cerrar-sesion" id="cerrar-sesion">Cerrar sesión</a>
+        <div class="access-info">
+          <p id="access-message" style="cursor: pointer; color: white; text-decoration: underline;">¿Quieres acceder?
+            Pulsa aquí.</p>
+        </div>
 
-    <nav class="nav">
-      <img src="img/Pok-dex-Neoland-17-11-2024.png" class="pokedex-neoland" alt="Logo Pokédex">
+        <button type="submit" id="submit">Entrar</button>
+        <p id="error-message" style="display: none; color: red;" aria-live="assertive"></p>
 
-      <ul class="nav-list">
-        <li class="nav-item"><button class="btn btn-header ver-todo" id="ver-todos">Ver todos</button></li>
-        <li class="nav-item"><button class="btn btn-header normal" id="normal">Normal</button></li>
-        <li class="nav-item"><button class="btn btn-header water" id="water">Agua</button></li>
-        <li class="nav-item"><button class="btn btn-header fire" id="fire">Fuego</button></li>
-        <li class="nav-item"><button class="btn btn-header ice" id="ice">Hielo</button></li>
-        <li class="nav-item"><button class="btn btn-header grass" id="grass">Planta</button></li>
-        <li class="nav-item"><button class="btn btn-header electric" id="electric">Eléctrico</button></li>
-        <li class="nav-item"><button class="btn btn-header rock" id="rock">Piedra</button></li>
-        <li class="nav-item"><button class="btn btn-header steel" id="steel">Acero</button></li>
-        <li class="nav-item"><button class="btn btn-header bug" id="bug">Bicho</button></li>
-        <li class="nav-item"><button class="btn btn-header poison" id="poison">Veneno</button></li>
-        <li class="nav-item"><button class="btn btn-header flying" id="flying">Volador</button></li>
-        <li class="nav-item"><button class="btn btn-header ghost" id="ghost">Fantasma</button></li>
-        <li class="nav-item"><button class="btn btn-header psychic" id="psychic">Psíquico</button></li>
-        <li class="nav-item"><button class="btn btn-header ground" id="ground">Tierra</button></li>
-        <li class="nav-item"><button class="btn btn-header dragon" id="dragon">Dragón</button></li>
-        <li class="nav-item"><button class="btn btn-header fighting" id="fighting">Lucha</button></li>
-        <li class="nav-item"><button class="btn btn-header fairy" id="fairy">Hada</button></li>
-      </ul>
-
-
-      <div id="buscador">
-        <h1 id="buscador-cabecera">Buscador de Pokémon</h1>
-        <input type="text" id="pokemon-name" autocomplete="off" placeholder="Nombre o ID del Pokémon" />
-      </div>
-
-    </nav>
-  </header>
-
-  <main>
-    <div id="todos">
-      <div class="pokemon-todos" id="listaPokemon"></div>
+      </form>
     </div>
-  </main>
+  </div>
 
-  <script type="module" src="./utils/apiPokemon.js"></script>
   <script type="module" src="main.js"></script>
 </body>
 

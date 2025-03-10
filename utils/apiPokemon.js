@@ -6,5 +6,6 @@ export const getPokemonData = async (pokeId) => {
         return data;
     } catch (error) {
         console.error('Error:', error);
+        return null;
     }
 };

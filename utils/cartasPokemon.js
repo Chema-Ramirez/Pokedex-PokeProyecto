@@ -2,7 +2,7 @@ export const createPokemonCard = (poke, pokeId) => {
     const div = document.createElement("div");
     div.classList.add("pokemon");
 
-    const tipos = poke.types.map(type => `<p class="${type.type.name} tipo">${type.type.name.toUpperCase()}</p>`).join('');
+    const tipos = poke.types.map(type => `<p class="tipo ${type.type.name}">${type.type.name.toUpperCase()}</p>`).join('');  // Añadí la clase `tipo` antes de la clase del tipo
 
     div.innerHTML = `
         <div class="pokemon-imagen">
@@ -17,13 +17,14 @@ export const createPokemonCard = (poke, pokeId) => {
                 ${tipos}
             </div>
             <div class="pokemon-stats">
-                <p class="stat">Altura: ${(poke.height / 10).toFixed(2)} m</p> <!-- Formateamos a metros -->
-                <p class="stat">Peso: ${(poke.weight / 10).toFixed(2)} kg</p> <!-- Formateamos a kg -->
+                <p class="stat">Altura: ${(poke.height / 10).toFixed(2)} m</p> 
+                <p class="stat">Peso: ${(poke.weight / 10).toFixed(2)} kg</p>
             </div>
         </div>
     `;
     return div;
 };
+
 
 export const displayPokemonList = (pokemonList, containerId) => {
     const container = document.getElementById(containerId);
@@ -38,4 +39,4 @@ export const displayPokemonList = (pokemonList, containerId) => {
             container.appendChild(pokemon);
         });
     }
-};
+}

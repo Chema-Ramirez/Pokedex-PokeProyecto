@@ -1,86 +1,80 @@
-import { getPokemonData } from './utils/apiPokemon.js';
-import { createPokemonCard, displayPokemonList } from './utils/cartasPokemon.js';
-
-const loadPokemons = async () => {
-    const pokemonList = [];
-    for (let i = 1; i <= 151; i++) { 
-        const pokeData = await getPokemonData(i);
-        const pokeCard = createPokemonCard(pokeData, i);
-        pokemonList.push(pokeCard);
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("loggedIn") === "true") {
+        window.location.href = "./components/home.html"
     }
-    displayPokemonList(pokemonList, 'listaPokemon');
-};
+    initializeLoginForm();
+    setupAccessMessage(); 
+})
 
-loadPokemons();
+function initializeLoginForm() {
+    const loginForm = document.getElementById("loginForm");
+    const errorMessage = document.getElementById("error-message");
 
-document.getElementById('ver-todos').addEventListener('click', () => loadPokemons());
+    const validUser = {
+        username: "admin",
+        password: "1234",
+    }
 
-const addFilterListener = (buttonId, type) => {
-    document.getElementById(buttonId).addEventListener('click', async () => {
-        const pokemonList = [];
-        for (let i = 1; i <= 151; i++) {
-            const pokeData = await getPokemonData(i);
-            if (pokeData.types.some(t => t.type.name === type)) {
-                const pokeCard = createPokemonCard(pokeData, i);
-                pokemonList.push(pokeCard);
-            }
-        }
-        displayPokemonList(pokemonList, 'listaPokemon');
-    });
-};
+    loginForm.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-addFilterListener('normal', 'normal');
-addFilterListener('water', 'water');
-addFilterListener('fire', 'fire');
-addFilterListener('ice', 'ice');
-addFilterListener('grass', 'grass');
-addFilterListener('electric', 'electric');
-addFilterListener('rock', 'rock');
-addFilterListener('steel', 'steel');
-addFilterListener('bug', 'bug');
-addFilterListener('poison', 'poison');
-addFilterListener('flying', 'flying');
-addFilterListener('ghost', 'ghost');
-addFilterListener('psychic', 'psychic');
-addFilterListener('ground', 'ground');
-addFilterListener('dragon', 'dragon');
-addFilterListener('fighting', 'fighting');
-addFilterListener('fairy', 'fairy');
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
 
-const searchInput = document.getElementById('pokemon-name');
-const pokemonInfo = document.getElementById('pokemon-info');
+        validateLogin(username, password, validUser) ? 
+            handleLoginSuccess(username) :
+            displayError(errorMessage, "Usuario o contraseña incorrectos.");
+    })
+}
 
-searchInput.addEventListener('input', async () => {
-    const inputValue = searchInput.value.trim();
+/**
+ * @param {string} username
+ * @param {string} password
+ * @param {Object} validUser
+ * @returns {boolean}
+ */
+function validateLogin(username, password, validUser) {
+    return username === validUser.username && password === validUser.password;
+}
+
+/**
+ * @param {HTMLElement} errorElement 
+ * @param {string} message
+ */
+function displayError(errorElement, message) {
+    errorElement.textContent = message;
+    errorElement.style.display = "block";
     
-    if (inputValue.length > 0) {
-        const filteredPokemons = [];
+    setTimeout(() => {
+        errorElement.style.display = "none";
+    }, 3000);
+}
 
-        if (isNaN(inputValue)) {
-            for (let i = 1; i <= 151; i++) {
-                const pokeData = await getPokemonData(i);
-                if (pokeData.name.toLowerCase().includes(inputValue.toLowerCase())) {
-                    const pokeCard = createPokemonCard(pokeData, i);
-                    filteredPokemons.push(pokeCard);
-                }
-            }
-        } else {
-            const pokeId = parseInt(inputValue);
-            if (pokeId >= 1 && pokeId <= 151) {
-                const pokeData = await getPokemonData(pokeId);
-                const pokeCard = createPokemonCard(pokeData, pokeId);
-                filteredPokemons.push(pokeCard);
-            }
-        }
+/**
+ * @param {string} username
+ */
+function handleLoginSuccess(username) {
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("username", username);
 
-        displayPokemonList(filteredPokemons, 'listaPokemon');
+    window.location.href = "./components/home.html";
+}
 
-        if (filteredPokemons.length === 0) {
-            pokemonInfo.innerHTML = '<p>No se encontraron Pokémon.</p>';
-        } else {
-            pokemonInfo.innerHTML = '';
-        }
-    } else {
-        loadPokemons();
+const $submit = document.getElementById("submit"),
+    $password = document.getElementById("password"),
+    $username = document.getElementById("username"),
+    $visible = document.getElementById("visible");
+
+document.addEventListener("change", (e) => {
+    if (e.target === $visible) {
+        $password.type = $visible.checked ? "text" : "password";
     }
-});
+})
+
+function setupAccessMessage() {
+    const accessMessage = document.getElementById("access-message");
+
+    accessMessage.addEventListener("click", () => {
+        alert("Usuario: admin\nContraseña: 1234");
+    });
+}
