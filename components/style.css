@@ -28,7 +28,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: 0;
   color: black;
   font-family: "Sour Gummy", sans-serif;
   font-optical-sizing: auto;
@@ -272,41 +272,129 @@ ul {
   color: var(--clr-black);
 }
 
-@media screen and (max-width: 480px) {
-  .pokemon-todos {
-    grid-template-columns: 1fr;
-  }
+.normal {
+  background-color: var(--type-normal);
+  color: var(--clr-black);
+}
 
-  .pokemon-imagen img {
-    max-width: 5rem;
-  }
+.water {
+  background-color: var(--type-water);
+  color: var(--clr-black);
+}
 
-  .pokemon-nombre {
-    font-size: 1.2rem;
-  }
+.fire {
+  background-color: var(--type-fire);
+  color: var(--clr-black);
+}
 
-  .pokemon-info {
-    padding-inline: 0.5rem;
-  }
+.ice {
+  background-color: var(--type-ice);
+  color: var(--clr-black);
+}
 
-  .pokemon-id {
-    font-size: 0.75rem;
-    padding: 0.25rem;
-  }
+.rock {
+  background-color: var(--type-rock);
+  color: var(--clr-black);
+}
 
-  .cerrar-sesion {
-    width: 120px;
-    font-size: 1rem;
-    padding: 0.1rem;
-  }
+.ghost {
+  background-color: var(--type-ghost);
+  color: var(--clr-black);
+}
 
-  #pokemon-name {
-    width: 200px;
-  }
+.fairy {
+  background-color: var(--type-fairy);
+  color: var(--clr-black);
+}
 
-  #pokemon-info {
-    width: 90%;
-  }
+.grass {
+  background-color: var(--type-grass);
+  color: var(--clr-black);
+}
+
+.ground {
+  background-color: var(--type-ground);
+  color: var(--clr-black);
+}
+
+.bug {
+  background-color: var(--type-bug);
+  color: var(--clr-black);
+}
+
+.flying {
+  background-color: var(--type-flying);
+  color: var(--clr-black);
+}
+
+.electric {
+  background-color: var(--type-electric);
+  color: var(--clr-black);
+}
+
+.steel {
+  background-color: var(--type-steel);
+  color: var(--clr-black);
+}
+
+.psychic {
+  background-color: var(--type-psychic);
+  color: var(--clr-black);
+}
+
+.fighting {
+  background-color: var(--type--fighting);
+  color: var(--clr-black);
+}
+
+.ice {
+  background-color: var(--type-ice);
+  color: var(--clr-black);
+}
+
+.dragon {
+  background-color: var(--type-dragon);
+  color: var(--clr-black);
+}
+
+.poison {
+  background-color: var(--type---poison);
+  color: var(--clr-black);
+}
+
+#buscador {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+#pokemon-name {
+  padding: 5px;
+  width: 250px;
+}
+
+#pokemon-info {
+  border-radius: 2rem;
+  background-color: var(--clr-white);
+  box-shadow: 0 0 3rem -1rem rgb(0, 0, 0, 0.25);
+  padding-block: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-position: 10% 100%;
+  justify-items: center;
+  border: 1px solid black;
+}
+
+#pokemon-info img {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+#pokemon-name {
+  border-radius: 5rem;
 }
 
 @media screen and (max-width: 768px) {

@@ -20,6 +20,8 @@ const loadPokemons = async () => {
 
 loadPokemons();
 
+document.getElementById('ver-todos').addEventListener('click', () => loadPokemons());
+
 const addFilterListener = (buttonId, type) => {
     document.getElementById(buttonId).addEventListener('click', async () => {
         const pokemonList = [];
